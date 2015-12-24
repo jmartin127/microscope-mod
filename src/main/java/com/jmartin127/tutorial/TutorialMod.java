@@ -1,5 +1,6 @@
 package com.jmartin127.tutorial;
 
+import com.jmartin127.tutorial.init.TutorialBlocks;
 import com.jmartin127.tutorial.init.TutorialItems;
 import com.jmartin127.tutorial.proxy.CommonProxy;
 
@@ -21,6 +22,8 @@ public class TutorialMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		TutorialBlocks.init();
+		TutorialBlocks.register();
 		TutorialItems.init();
 		TutorialItems.register();
 	}
