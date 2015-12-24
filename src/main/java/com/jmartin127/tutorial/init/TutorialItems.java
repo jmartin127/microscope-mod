@@ -3,6 +3,7 @@ package com.jmartin127.tutorial.init;
 import java.util.List;
 
 import com.jmartin127.tutorial.Reference;
+import com.jmartin127.tutorial.MicroscopeMod;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -10,8 +11,8 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TutorialItems {
-	
-	private enum CustomItem {
+
+	public enum MicroscopeItem {
 		MICROSCOPE_TOP,
 		MICROSCOPE_BOTTOM,
 		MICROSCOPE,
@@ -20,8 +21,10 @@ public class TutorialItems {
 		
 		private Item item;
 		
-		private CustomItem() {
-			this.item = new Item().setUnlocalizedName(this.name());
+		private MicroscopeItem() {
+			this.item = new Item()
+					.setUnlocalizedName(this.name())
+					.setCreativeTab(MicroscopeMod.MICROSCOPE_TAB);
 		}
 		
 		public Item getItem() {
@@ -36,18 +39,18 @@ public class TutorialItems {
 	}
 	
 	public static void register() {
-		for (CustomItem customItem : CustomItem.values()) {
+		for (MicroscopeItem customItem : MicroscopeItem.values()) {
 			GameRegistry.registerItem(customItem.getItem(), customItem.name());
 		}
 	}
 	
 	public static void registerRenders() {
-		for (CustomItem customItem : CustomItem.values()) {
+		for (MicroscopeItem customItem : MicroscopeItem.values()) {
 			registerRender(customItem);
 		}
 	}
 	
-	public static void registerRender(CustomItem customItem) {
+	public static void registerRender(MicroscopeItem customItem) {
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(customItem.getItem(), 0, new ModelResourceLocation(Reference.MOD_ID + ":" + customItem.name(), "inventory"));
 	}
 	

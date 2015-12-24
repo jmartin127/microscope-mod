@@ -1,12 +1,14 @@
 package com.jmartin127.tutorial.init;
 
 import com.jmartin127.tutorial.Reference;
+import com.jmartin127.tutorial.MicroscopeMod;
 import com.jmartin127.tutorial.blocks.BlockTest;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -21,7 +23,9 @@ public class TutorialBlocks {
 		private Block block;
 		
 		private CustomBlock() {
-			this.block =  new Block(Material.cloth).setUnlocalizedName(this.name());
+			this.block =  new Block(Material.cloth)
+					.setUnlocalizedName(this.name())
+					.setCreativeTab(MicroscopeMod.MICROSCOPE_TAB);
 		}
 		
 		public Block getBlock() {
