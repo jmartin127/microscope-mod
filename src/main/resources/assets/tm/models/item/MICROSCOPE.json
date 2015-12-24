@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "tm:items/microscope_lightbulb"
+        "layer0": "tm:items/microscope"
     },
     "display": {
         "thirdperson": {

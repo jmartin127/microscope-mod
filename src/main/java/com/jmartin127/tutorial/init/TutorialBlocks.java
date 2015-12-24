@@ -12,22 +12,41 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TutorialBlocks {
 	
-	public static Block test_block;
+	private enum CustomBlock {
+		microscope_ore,
+		microscope_slide,
+		present,
+		present2;
+		
+		private Block block;
+		
+		private CustomBlock() {
+			this.block =  new Block(Material.cloth).setUnlocalizedName(this.name());
+		}
+		
+		public Block getBlock() {
+			return block;
+		}
+	}
 	
 	public static void init() {
-		test_block = new BlockTest(Material.cloth).setUnlocalizedName("test_block");
+		// not needed at this time
 	}
 	
 	public static void register() {
-		GameRegistry.registerBlock(test_block, test_block.getUnlocalizedName().substring(5));
+		for (CustomBlock block : CustomBlock.values()) {
+			GameRegistry.registerBlock(block.getBlock(), block.name());
+		}
 	}
 	
 	public static void registerRenders() {
-		registerRender(test_block);
+		for (CustomBlock block : CustomBlock.values()) {
+			registerRender(block);
+		}
 	}
 	
-	public static void registerRender(Block block) {
-		Item item = Item.getItemFromBlock(block);
+	public static void registerRender(CustomBlock customBlock) {
+		Item item = Item.getItemFromBlock(customBlock.getBlock());
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
 	}
 

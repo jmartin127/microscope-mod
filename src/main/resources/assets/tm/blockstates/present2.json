@@ -1,7 +1,7 @@
 {
     "variants": {
         "normal": {
-            "model": "tm:test_block"
+            "model": "tm:present2"
         }
     }
 }
