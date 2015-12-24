@@ -1,0 +1,10 @@
+item.MICROSCOPE_TOP.name=Microscope Top
+item.MICROSCOPE_BOTTOM.name=Microscope Bottom
+item.MICROSCOPE.name=Microscope
+item.MICROSCOPE_PLUG.name=Microscope Plug
+item.MICROSCOPE_LIGHT.name=Microscope Light
+item.MICROSCOPE_LIGHT.name=Microscope Light
+tile.microscope_ore.name=Microscope Ore Block
+tile.microscope_slide.name=Microscope Slide Block
+tile.present.name=Green Christmas Present
+tile.present2.name=Red Christmas Present

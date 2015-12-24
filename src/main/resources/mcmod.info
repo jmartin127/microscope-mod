@@ -1,6 +1,6 @@
 [
 {
-  "modid": "tm",
+  "modid": "microscope",
   "name": "Microscope Mod",
   "description": "Awesome microscope mod.",
   "version": "${version}",
